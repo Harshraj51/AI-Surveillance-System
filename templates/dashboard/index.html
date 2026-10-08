@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+{% include "components/cards.html" %}
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+    <div class="col-span-2">
+
+        {% include "components/recent_table.html" %}
+
+    </div>
+
+    <div class="space-y-6">
+
+        {% include "components/live_camera.html" %}
+
+        {% include "components/activity.html" %}
+
+    </div>
+
+</div>
+
+{% endblock %}

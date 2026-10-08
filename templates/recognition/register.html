@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Face</title>
+</head>
+
+<body>
+
+    <h1>Register Known Face</h1>
+
+    {% if error %}
+        <p style="color:red;">
+            {{ error }}
+        </p>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <br>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter person's name"
+            required
+        >
+
+        <br><br>
+
+        <label>Face Image:</label>
+        <br>
+
+        <input
+            type="file"
+            name="image"
+            accept="image/*"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Register Face
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="{% url 'live_camera' %}">
+        Back to Live Camera
+    </a>
+
+</body>
+</html>

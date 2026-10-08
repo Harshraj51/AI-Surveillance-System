@@ -10,10 +10,28 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
 
-<body>
+<body class="bg-slate-950 text-white">
 
-    {% block content %}
-    {% endblock %}
+    <div class="flex min-h-screen">
+
+        <!-- Sidebar -->
+        {% include "components/sidebar.html" %}
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Navbar -->
+            {% include "components/navbar.html" %}
+
+            <!-- Page Content -->
+            <main class="p-8">
+                {% block content %}
+                {% endblock %}
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
 

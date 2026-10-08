@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Live Camera
+{% endblock %}
+
+{% block content %}
+
+<div class="p-6">
+
+    <h1 class="text-3xl font-bold text-cyan-400 mb-6">
+        Live Camera
+    </h1>
+
+    <div class="bg-slate-900 rounded-xl p-4 shadow-lg">
+
+        <img
+            src="{% url 'video_feed' %}"
+            class="w-full h-full object-cover rounded-xl"
+        />
+
+    </div>
+
+</div>
+
+{% endblock %}
